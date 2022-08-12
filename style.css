@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    perspective: 200px;
+}
+
+.logo:hover>.first-container {
+    animation: rotating 4s linear infinite;
+}
+
+.logo:hover>.second-container {
+    animation: rotating2 4s linear infinite;
+}
+
+.logo .first-container {
+    position: absolute;
+    background-color: #00ced6;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transform: rotate(30deg);
+}
+
+@keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating2 {
+    from {
+        -webkit-transform: rotate(360deg);
+    }
+
+    to {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+.logo .second-container {
+    background-color: #ff0061;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transform: rotate(50deg);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    mix-blend-mode: darken;
+}
